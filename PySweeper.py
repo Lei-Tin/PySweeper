@@ -406,7 +406,7 @@ def main() -> None:
         event = pygame.event.wait()
 
         if event.type == pygame.MOUSEBUTTONDOWN:
-            # Call our event handling method
+            # Call the event handling method
             handle_mouse_click(screen, event, screen.get_size(), board)
 
             draw_gridlines(screen, board)
