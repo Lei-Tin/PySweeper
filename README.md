@@ -11,6 +11,7 @@ A light minesweeper clone written in pure Python, roughly 500 lines.
 - Ending screen
 
 # In Game Picture
+![Picture of a 7 by 7 grid with 5 mines](https://github.com/Lei-Tin/PySweeper/blob/b3ed67d4fa86827a3b0ff15462c379206495b0e8/Demo.png)
 
 # Libraries used
 - pygame
