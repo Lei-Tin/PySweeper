@@ -4,9 +4,9 @@ Contains numerous settings for the actual game
 """
 
 # Basic settings
-BOARD_ROWS = 20
-BOARD_COLUMNS = 20
-NUM_BOMBS = 30
+BOARD_ROWS = 7
+BOARD_COLUMNS = 7
+NUM_BOMBS = 5
 
 # Video settings
 WINDOW_SIZE = (1080, 1080)
