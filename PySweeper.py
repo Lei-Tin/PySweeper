@@ -15,8 +15,17 @@ class InvalidBombCountException(Exception):
 
     def __str__(self) -> str:
         """The string representation of this exception"""
-        return 'Invalid Bomb Count Exception: Perhaps the number of bombs is larger ' \
-               'than the total number of tiles?'
+        return 'Invalid Bomb Count Exception: Perhaps there are no bombs or ' \
+               'the number of bombs is larger ' \
+               'than or equal to the total number of tiles?'
+
+
+class InvalidGridSizeException(Exception):
+    """The exception that will be raised when we have a negative number of grid size"""
+
+    def __str__(self) -> str:
+        """The string representation of this exception"""
+        return 'Invalid Grid Size Exception: Perhaps the grid is too small?'
 
 
 class Board(object):
@@ -57,8 +66,11 @@ class Board(object):
         self._bombs_count = bombs
         self._bombs_location = []
 
-        if self._bombs_count >= self._rows * self._columns:
+        if self._bombs_count == 0 or self._bombs_count >= self._rows * self._columns:
             raise InvalidBombCountException
+
+        if self._rows <= 0 or self._columns <= 0:
+            raise InvalidGridSizeException
 
         # Initializes a board with nothing, and also a flag with nothing
         self._board = [[None for _ in range(self._columns)] for _ in range(self._rows)]
@@ -509,6 +521,8 @@ def main() -> None:
         elif event.type == pygame.QUIT:
             pygame.display.quit()
             break
+
+    input('Press enter in the console to close the program!')
 
 
 if __name__ == '__main__':
